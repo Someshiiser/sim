@@ -865,4 +865,10 @@ CMakeFiles/sim.dir/sim.cc.o: /home/somesh/geant4_projects/sim/sim.cc \
  /home/somesh/geant4-install/include/Geant4/G4ParticleTable.hh \
  /home/somesh/geant4_projects/sim/run.hh \
  /home/somesh/geant4-install/include/Geant4/G4UserRunAction.hh \
- /home/somesh/geant4-install/include/Geant4/G4Run.hh
+ /home/somesh/geant4-install/include/Geant4/G4Run.hh \
+ /home/somesh/geant4_projects/sim/event.hh \
+ /home/somesh/geant4-install/include/Geant4/G4UserEventAction.hh \
+ /home/somesh/geant4-install/include/Geant4/G4Event.hh \
+ /home/somesh/geant4_projects/sim/stepping.hh \
+ /home/somesh/geant4-install/include/Geant4/G4UserSteppingAction.hh \
+ /home/somesh/geant4-install/include/Geant4/G4Step.hh

@@ -22,23 +22,29 @@ public:
 	MyDetectorConstruction();
 	~MyDetectorConstruction();
 
+	G4LogicalVolume *GetScoringVolume() const {return fScoringVolume;}
+
 	virtual G4VPhysicalVolume *Construct();
 private:
-	G4LogicalVolume *logicDetector;
-	virtual void ConstructSDandField();
 
-	G4int nCols, nRows; // number of columns and rows of the photosensors
 
 	G4Box *solidWorld, *solidRadiator, *solidDetector;
 	G4LogicalVolume *logicWorld, *logicRadiator;
 	G4VPhysicalVolume *physWorld, *physRadiator, *physDetector;
 
-	G4GenericMessenger *fMessenger;
-
 	G4Material *SiO2, *H2O, *Aerogel, *worldMat;
 	G4Element *C;
 
 	void DefineMaterials();
+	virtual void ConstructSDandField();
+
+	G4GenericMessenger *fMessenger;
+
+	G4LogicalVolume *logicDetector;
+	G4LogicalVolume *fScoringVolume; // logical volume for scoring
+
+	G4int nCols, nRows; // number of columns and rows of the photosensors
+
 };
 
 #endif

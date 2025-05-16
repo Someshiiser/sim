@@ -108,6 +108,9 @@ physWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicWorld, "physWor
 
 solidRadiator = new G4Box("solidRadiator", 0.4*m, 0.4*m, 0.01*m);
 logicRadiator = new G4LogicalVolume(solidRadiator, Aerogel, "logicRadiator");
+
+fScoringVolume = logicRadiator; // we have to define the scoring volume, which is the volume in which we will put all the other volumes.
+
 physRadiator= new G4PVPlacement(0, G4ThreeVector(0., 0., 0.25*m), logicRadiator, "physRadiator", logicWorld, false, 0, true);
 //adding the photosensors, that is detectors.
     solidDetector = new G4Box("solidDetector", xWorld/nRows, yWorld/nCols, 0.001*m);

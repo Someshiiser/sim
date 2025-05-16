@@ -214,6 +214,30 @@ detector.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/detector.cc.s
 .PHONY : detector.cc.s
 
+event.o: event.cc.o
+.PHONY : event.o
+
+# target to build an object file
+event.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/event.cc.o
+.PHONY : event.cc.o
+
+event.i: event.cc.i
+.PHONY : event.i
+
+# target to preprocess a source file
+event.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/event.cc.i
+.PHONY : event.cc.i
+
+event.s: event.cc.s
+.PHONY : event.s
+
+# target to generate assembly for a file
+event.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/event.cc.s
+.PHONY : event.cc.s
+
 generator.o: generator.cc.o
 .PHONY : generator.o
 
@@ -310,6 +334,30 @@ sim.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/sim.cc.s
 .PHONY : sim.cc.s
 
+stepping.o: stepping.cc.o
+.PHONY : stepping.o
+
+# target to build an object file
+stepping.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/stepping.cc.o
+.PHONY : stepping.cc.o
+
+stepping.i: stepping.cc.i
+.PHONY : stepping.i
+
+# target to preprocess a source file
+stepping.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/stepping.cc.i
+.PHONY : stepping.cc.i
+
+stepping.s: stepping.cc.s
+.PHONY : stepping.s
+
+# target to generate assembly for a file
+stepping.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/stepping.cc.s
+.PHONY : stepping.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -329,6 +377,9 @@ help:
 	@echo "... detector.o"
 	@echo "... detector.i"
 	@echo "... detector.s"
+	@echo "... event.o"
+	@echo "... event.i"
+	@echo "... event.s"
 	@echo "... generator.o"
 	@echo "... generator.i"
 	@echo "... generator.s"
@@ -341,6 +392,9 @@ help:
 	@echo "... sim.o"
 	@echo "... sim.i"
 	@echo "... sim.s"
+	@echo "... stepping.o"
+	@echo "... stepping.i"
+	@echo "... stepping.s"
 .PHONY : help
 
 
