@@ -4,6 +4,7 @@
 #include "G4VUserDetectorConstruction.hh"
 #include "G4VPhysicalVolume.hh"
 #include "G4Box.hh"
+#include "G4Tubs.hh"
 #include "G4PVPlacement.hh"
 #include "G4NistManager.hh"
 #include "G4LogicalVolume.hh"
@@ -29,13 +30,21 @@ private:
 
 
 	G4Box *solidWorld, *solidRadiator, *solidDetector;
-	G4LogicalVolume *logicWorld, *logicRadiator;
-	G4VPhysicalVolume *physWorld, *physRadiator, *physDetector;
+	// add a cylinder for the scinntillator
+	G4Tubs *solidScintillator;
+	//G4LogicalVolume *logicWorld, *logicRadiator,*logicDetector, *logicScintillator;
+	G4LogicalVolume *logicWorld, *logicRadiator, *logicScintillator;
+	G4VPhysicalVolume *physWorld, *physRadiator, *physDetector, *physScintillator;
 
-	G4Material *SiO2, *H2O, *Aerogel, *worldMat;
-	G4Element *C;
+	G4Material *SiO2, *H2O, *Aerogel, *worldMat, *NaI;
+	G4Element *C, *Na, *I;
 
 	void DefineMaterials();
+
+	// Whenever and whatever you construct put them here below.
+	void ConstructCherenkov();
+	void ConstructScintillator();
+
 	virtual void ConstructSDandField();
 
 	G4GenericMessenger *fMessenger;
@@ -44,6 +53,10 @@ private:
 	G4LogicalVolume *fScoringVolume; // logical volume for scoring
 
 	G4int nCols, nRows; // number of columns and rows of the photosensors
+
+	G4double xWorld, yWorld, zWorld; // dimensions of the world volume
+
+	G4bool isCherenkov, isScintillator; // flags to check if the user wants to use cherenkov or scintillator
 
 };
 

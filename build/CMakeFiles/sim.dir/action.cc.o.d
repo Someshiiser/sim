@@ -251,6 +251,10 @@ CMakeFiles/sim.dir/action.cc.o: \
  /home/somesh/geant4-install/include/Geant4/G4ParticleTable.hh \
  /home/somesh/geant4-install/include/Geant4/G4ParticleTableIterator.hh \
  /home/somesh/geant4-install/include/Geant4/G4ParticleTable.icc \
+ /home/somesh/geant4-install/include/Geant4/G4IonTable.hh \
+ /home/somesh/geant4-install/include/Geant4/G4ParticleTable.hh \
+ /home/somesh/geant4-install/include/Geant4/G4Ions.hh \
+ /home/somesh/geant4-install/include/Geant4/G4Geantino.hh \
  /home/somesh/geant4_projects/sim/run.hh \
  /home/somesh/geant4-install/include/Geant4/G4UserRunAction.hh \
  /home/somesh/geant4-install/include/Geant4/G4Run.hh \
@@ -628,6 +632,8 @@ CMakeFiles/sim.dir/action.cc.o: \
  /home/somesh/geant4-install/include/Geant4/G4Visible.hh \
  /home/somesh/geant4-install/include/Geant4/G4Visible.icc \
  /home/somesh/geant4-install/include/Geant4/G4Box.icc \
+ /home/somesh/geant4-install/include/Geant4/G4Tubs.hh \
+ /home/somesh/geant4-install/include/Geant4/G4Tubs.icc \
  /home/somesh/geant4-install/include/Geant4/G4PVPlacement.hh \
  /home/somesh/geant4-install/include/Geant4/G4NistManager.hh \
  /home/somesh/geant4-install/include/Geant4/G4NistElementBuilder.hh \
@@ -684,7 +690,6 @@ CMakeFiles/sim.dir/action.cc.o: \
  /home/somesh/geant4-install/include/Geant4/G4TrackStack.hh \
  /home/somesh/geant4-install/include/Geant4/G4SmartTrackStack.hh \
  /home/somesh/geant4-install/include/Geant4/G4PrimaryTransformer.hh \
- /home/somesh/geant4-install/include/Geant4/G4ParticleTable.hh \
  /home/somesh/geant4-install/include/Geant4/G4TrackingManager.hh \
  /home/somesh/geant4-install/include/Geant4/G4SteppingManager.hh \
  /home/somesh/geant4-install/include/Geant4/Randomize.hh \

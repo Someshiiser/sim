@@ -349,6 +349,8 @@ CMakeFiles/sim.dir/stepping.cc.o: \
  /home/somesh/geant4-install/include/Geant4/G4Visible.hh \
  /home/somesh/geant4-install/include/Geant4/G4Visible.icc \
  /home/somesh/geant4-install/include/Geant4/G4Box.icc \
+ /home/somesh/geant4-install/include/Geant4/G4Tubs.hh \
+ /home/somesh/geant4-install/include/Geant4/G4Tubs.icc \
  /home/somesh/geant4-install/include/Geant4/G4PVPlacement.hh \
  /home/somesh/geant4-install/include/Geant4/G4NistManager.hh \
  /home/somesh/geant4-install/include/Geant4/G4NistElementBuilder.hh \

@@ -6,13 +6,23 @@ MyDetectorConstruction:: MyDetectorConstruction()
     fMessenger = new G4GenericMessenger(this, "/detector/", "Detector construction");
     fMessenger->DeclareProperty("nCols", nCols, "Number of columns"); //nCols is the number of photosensors in the coulmn.
     fMessenger->DeclareProperty("nRows", nRows, "Number of rows"); //nRows is the number of photosensors in the row.
+    fMessenger->DeclareProperty("isCherenkov", isCherenkov, "Toggle Cherenkov setup");
+    fMessenger->DeclareProperty("isScintillator", isScintillator, "Toggle Scintillator setup");
 
     nCols = 100; // default value
     nRows = 100; // default value
     // we can also set the default value in the constructor.
     DefineMaterials(); 
+
+    xWorld = 0.5*m;
+    yWorld = 0.5*m;
+    zWorld = 0.5*m;
+
+    isCherenkov = false; // default value
+    isScintillator = true; // default value
     
 } 
+
 MyDetectorConstruction::~MyDetectorConstruction() 
 {} 
 
@@ -57,11 +67,55 @@ void MyDetectorConstruction::DefineMaterials()
     Aerogel -> SetMaterialPropertiesTable(mptAerogel);
     worldMat -> SetMaterialPropertiesTable(mptWorld);
 
+    Na = nist -> FindOrBuildElement("Na"),
+    I = nist -> FindOrBuildElement("I");
+    NaI = new G4Material("NaI", 3.67*g/cm3, 2);
+    NaI -> AddElement(Na, 1);
+    NaI -> AddElement(I, 1);
+
 }
  
+void MyDetectorConstruction::ConstructCherenkov() 
+{
+    solidRadiator = new G4Box("solidRadiator", 0.4*m, 0.4*m, 0.01*m);
+    logicRadiator = new G4LogicalVolume(solidRadiator, Aerogel, "logicRadiator");
+
+    //fScoringVolume = logicRadiator; // we have to define the scoring volume, which is the volume in which we will put all the other volumes.
+
+    physRadiator= new G4PVPlacement(0, G4ThreeVector(0., 0., 0.25*m), logicRadiator, "physRadiator", logicWorld, false, 0, true);
+    //adding the photosensors, that is detectors.
+    solidDetector = new G4Box("solidDetector", xWorld/nRows, yWorld/nCols, 0.001*m);
+    //to create logical volume for the detector, we have to considere the fact the sensitive volume that we will defint later will have to refer to this volume, so we have to define it in class definition directly.
+    logicDetector = new G4LogicalVolume(solidDetector, worldMat, " logicDetector");
+    
+    //To hide the detectors, they are invisible. Thats it.
+    G4VisAttributes* invisible = new G4VisAttributes();
+    invisible->SetVisibility(false);
+    logicDetector->SetVisAttributes(invisible);
+    
+    // now we have create physical instanses for the detector, for which we will need to array of sensitive detectors. to do create two for loops.
+    for(G4int i=0; i< nRows;i++)
+    {
+        for(G4int j=0; j< nCols;j++)
+        {
+            physDetector = new G4PVPlacement(0, G4ThreeVector(-0.5*m +(i+0.5)*m/nRows, -0.5*m +(j+0.5)*m/nCols, 0.49*m), logicDetector, "physDetector", logicWorld, false, j+i*nCols, true);
+        }
+    }
+    // to detect them we create a new class by making two new files. detector.cc/.hh
+}
+
+void MyDetectorConstruction::ConstructScintillator() 
+{
+    solidScintillator = new G4Tubs("solidScintillator", 10*cm, 20*cm, 30*cm, 0*deg, 360*deg);
+    
+    logicScintillator = new G4LogicalVolume(solidScintillator, NaI, "logicalScintillator");
+    fScoringVolume = logicScintillator; // we have to define the scoring volume, which is the volume in which we will put all the other volumes.
+    
+    physScintillator = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicScintillator, "physScintialltor", logicWorld, false, 0, true);
+}
+
 G4VPhysicalVolume *MyDetectorConstruction::Construct() 
 { 
- 
 //G4NistManager *nist = G4NistManager:: Instance(); 
 // we are using the NIST manager to get the materials.
 //making aero gel.
@@ -94,9 +148,10 @@ G4VPhysicalVolume *MyDetectorConstruction::Construct()
 //mptWorld -> AddProperty("RINDEX", energy, rindexWorld, 2);
 //worldMat -> SetMaterialPropertiesTable(mptWorld);
 
-G4double xWorld = 0.5*m;
-G4double yWorld = 0.5*m;
-G4double zWorld = 0.5*m;
+// gone to the constructor.
+//G4double xWorld = 0.5*m;
+//G4double yWorld = 0.5*m;
+//G4double zWorld = 0.5*m;
 // we have to define the world volume, which is the volume in which we will put all the other volumes.
 
 
@@ -106,36 +161,48 @@ logicWorld = new G4LogicalVolume (solidWorld, worldMat, "logicWorld");
  
 physWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicWorld, "physWorld", 0, false, 0, true); //(rotation=0 ,origin placing, logical volume to work in, name, ,booelan=no=false,,for checking overlap)  
 
-solidRadiator = new G4Box("solidRadiator", 0.4*m, 0.4*m, 0.01*m);
-logicRadiator = new G4LogicalVolume(solidRadiator, Aerogel, "logicRadiator");
+if(isCherenkov) 
+    ConstructCherenkov(); // if the user wants to use cherenkov, we call the function to construct it.
+if(isScintillator)
+    ConstructScintillator();
 
-fScoringVolume = logicRadiator; // we have to define the scoring volume, which is the volume in which we will put all the other volumes.
+// all below is gone to the cherenkov.
+//solidRadiator = new G4Box("solidRadiator", 0.4*m, 0.4*m, 0.01*m);
+//logicRadiator = new G4LogicalVolume(solidRadiator, Aerogel, "logicRadiator");
+//
+//fScoringVolume = logicRadiator; // we have to define the scoring volume, which is the volume in which we will put all the other volumes.
+//
+//physRadiator= new G4PVPlacement(0, G4ThreeVector(0., 0., 0.25*m), logicRadiator, "physRadiator", logicWorld, false, 0, true);
+////adding the photosensors, that is detectors.
+//    solidDetector = new G4Box("solidDetector", xWorld/nRows, yWorld/nCols, 0.001*m);
+//    //to create logical volume for the detector, we have to considere the fact the sensitive volume that we will defint later will have to refer to this volume, so we have to define it in class definition directly.
+//    logicDetector = new G4LogicalVolume(solidDetector, worldMat, " logicDetector");
+//    
+//    //To hide the detectors, they are invisible. Thats it.
+//    G4VisAttributes* invisible = new G4VisAttributes();
+//    invisible->SetVisibility(false);
+//    logicDetector->SetVisAttributes(invisible);
+//    
+//    // now we have create physical instanses for the detector, for which we will need to array of sensitive detectors. to do create two for loops.
+//    for(G4int i=0; i< nRows;i++)
+//    {
+//        for(G4int j=0; j< nCols;j++)
+//        {
+//            physDetector = new G4PVPlacement(0, G4ThreeVector(-0.5*m +(i+0.5)*m/nRows, -0.5*m +(j+0.5)*m/nCols, 0.49*m), logicDetector, "physDetector", logicWorld, false, j+i*nCols, true);
+//        }
+//    }
+//    // to detect them we create a new class by making two new files. detector.cc/.hh
 
-physRadiator= new G4PVPlacement(0, G4ThreeVector(0., 0., 0.25*m), logicRadiator, "physRadiator", logicWorld, false, 0, true);
-//adding the photosensors, that is detectors.
-    solidDetector = new G4Box("solidDetector", xWorld/nRows, yWorld/nCols, 0.001*m);
-    //to create logical volume for the detector, we have to considere the fact the sensitive volume that we will defint later will have to refer to this volume, so we have to define it in class definition directly.
-    logicDetector = new G4LogicalVolume(solidDetector, worldMat, " logicDetector");
-    
-    //To hide the detectors, they are invisible. Thats it.
-    G4VisAttributes* invisible = new G4VisAttributes();
-    invisible->SetVisibility(false);
-    logicDetector->SetVisAttributes(invisible);
-    
-    // now we have create physical instanses for the detector, for which we will need to array of sensitive detectors. to do create two for loops.
-    for(G4int i=0; i< nRows;i++)
-    {
-        for(G4int j=0; j< nCols;j++)
-        {
-            physDetector = new G4PVPlacement(0, G4ThreeVector(-0.5*m +(i+0.5)*m/nRows, -0.5*m +(j+0.5)*m/nCols, 0.49*m), logicDetector, "physDetector", logicWorld, false, j+i*nCols, true);
-        }
-    }
-    // to detect them we create a new class by making two new files. detector.cc/.hh
 return physWorld;
 } 
 
 void MyDetectorConstruction::ConstructSDandField()
 {
     MySensitiveDetector *sensDet = new MySensitiveDetector("Sensitive Detector");
-    logicDetector -> SetSensitiveDetector(sensDet);
+    //logicDetector -> SetSensitiveDetector(sensDet);
+
+    if(isCherenkov)
+        logicRadiator -> SetSensitiveDetector(sensDet);
+
+    
 }
