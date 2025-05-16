@@ -1,24 +1,24 @@
-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR) # It tells the minimum cmake version neede to compile the code and gives error if probelm.
-project(Simulation) # tells cmake to create a project and name the project.
+cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
 
-find_package(Geant4 REQUIRED ui_all vis_all) # first find the package geant4 and then we need user interfacea nd visualization.
+project(Simulation)
 
-include(${Geant4_USE_FILE}) # tells cmake to include files for the geant4 in this path.
+find_package(Geant4 REQUIRED ui_all vis_all)
 
-file(GLOB sources ${PROJECT_SOURCE_DIR}/*.cc) # it create a global variable "sources" and then {} is the folder where our script is positioned. /*.cc tell the cmake to take all source files from that folder and compile it later with gcc or c++.
+include(${Geant4_USE_FILE})
+
+file(GLOB sources ${PROJECT_SOURCE_DIR}/*.cc)
 file(GLOB headers ${PROJECT_SOURCE_DIR}/*.hh)
 
 add_executable(sim sim.cc ${sources} ${headers})
 target_link_libraries(sim ${Geant4_LIBRARIES})
 
-
 file(GLOB MACRO_FILES
-    "*.mac"
+  "*.mac"
 )
 file(COPY ${MACRO_FILES} DESTINATION ${PROJECT_BINARY_DIR})
 
 file(GLOB DATA_FILES
-    "*.dat"
+  "*.dat"
 )
 file(COPY ${DATA_FILES} DESTINATION ${PROJECT_BINARY_DIR})
 

@@ -557,9 +557,24 @@ CMakeFiles/sim.dir/sim.cc.o: /home/somesh/geant4_projects/sim/sim.cc \
  /home/somesh/geant4-install/include/Geant4/G4RayTracerX.hh \
  /home/somesh/geant4-install/include/Geant4/G4UIExecutive.hh \
  /home/somesh/geant4-install/include/Geant4/G4VUIshell.hh \
+ /home/somesh/geant4-install/include/Geant4/QGSP_BERT.hh \
+ /home/somesh/geant4-install/include/Geant4/G4VModularPhysicsList.hh \
+ /home/somesh/geant4-install/include/Geant4/G4VPhysicsConstructor.hh \
+ /home/somesh/geant4-install/include/Geant4/G4PhysicsListHelper.hh \
+ /home/somesh/geant4-install/include/Geant4/G4PhysicsListOrderingParameter.hh \
+ /home/somesh/geant4-install/include/Geant4/G4ThreadLocalSingleton.hh \
+ /home/somesh/geant4-install/include/Geant4/G4Cache.hh \
+ /home/somesh/geant4-install/include/Geant4/G4CacheDetails.hh \
+ /home/somesh/geant4-install/include/Geant4/G4VUPLSplitter.hh \
+ /home/somesh/geant4-install/include/Geant4/G4VUserPhysicsList.hh \
+ /home/somesh/geant4-install/include/Geant4/G4ProductionCutsTable.hh \
+ /home/somesh/geant4-install/include/Geant4/G4MaterialCutsCouple.hh \
+ /home/somesh/geant4-install/include/Geant4/G4ProductionCuts.hh \
+ /home/somesh/geant4-install/include/Geant4/G4MCCIndexConversionTable.hh \
  /home/somesh/geant4_projects/sim/construction.hh \
  /home/somesh/geant4-install/include/Geant4/G4VUserDetectorConstruction.hh \
  /home/somesh/geant4-install/include/Geant4/G4VPhysicalVolume.hh \
+ /home/somesh/geant4-install/include/Geant4/G4LogicalVolume.hh \
  /home/somesh/geant4-install/include/Geant4/G4Box.hh \
  /home/somesh/geant4-install/include/Geant4/G4GeomTypes.hh \
  /home/somesh/geant4-install/include/Geant4/G4GeomConfig.hh \
@@ -577,12 +592,7 @@ CMakeFiles/sim.dir/sim.cc.o: /home/somesh/geant4_projects/sim/sim.cc \
  /home/somesh/geant4-install/include/Geant4/G4LPhysicsFreeVector.hh \
  /home/somesh/geant4-install/include/Geant4/G4PhysicsFreeVector.hh \
  /home/somesh/geant4-install/include/Geant4/G4Pow.hh \
- /home/somesh/geant4-install/include/Geant4/G4LogicalVolume.hh \
  /home/somesh/geant4-install/include/Geant4/G4SystemOfUnits.hh \
- /home/somesh/geant4-install/include/Geant4/G4VPVParameterisation.hh \
- /home/somesh/geant4-install/include/Geant4/G4PVParameterised.hh \
- /home/somesh/geant4-install/include/Geant4/G4PVReplica.hh \
- /home/somesh/geant4-install/include/Geant4/G4VisAttributes.hh \
  /home/somesh/geant4-install/include/Geant4/G4GenericMessenger.hh \
  /home/somesh/geant4-install/include/Geant4/G4AnyType.hh \
  /home/somesh/geant4-install/include/Geant4/G4AnyMethod.hh \
@@ -590,9 +600,11 @@ CMakeFiles/sim.dir/sim.cc.o: /home/somesh/geant4_projects/sim/sim.cc \
  /home/somesh/geant4-install/include/Geant4/G4Physics2DVector.hh \
  /home/somesh/geant4-install/include/Geant4/G4Physics2DVector.icc \
  /home/somesh/geant4-install/include/Geant4/G4SurfaceProperty.hh \
- /home/somesh/geant4-install/include/Geant4/G4LogicalSkinSurface.hh \
+ /home/somesh/geant4-install/include/Geant4/G4LogicalBorderSurface.hh \
  /home/somesh/geant4-install/include/Geant4/G4LogicalSurface.hh \
  /home/somesh/geant4-install/include/Geant4/G4LogicalSurface.icc \
+ /home/somesh/geant4-install/include/Geant4/G4LogicalBorderSurface.icc \
+ /home/somesh/geant4-install/include/Geant4/G4LogicalSkinSurface.hh \
  /home/somesh/geant4-install/include/Geant4/G4LogicalSkinSurface.icc \
  /home/somesh/geant4_projects/sim/detector.hh \
  /home/somesh/geant4-install/include/Geant4/G4VSensitiveDetector.hh \
@@ -851,27 +863,15 @@ CMakeFiles/sim.dir/sim.cc.o: /home/somesh/geant4_projects/sim/sim.cc \
  /home/somesh/geant4-install/include/Geant4/g4hntools_defs.hh \
  /home/somesh/geant4_projects/sim/physics.hh \
  /home/somesh/geant4-install/include/Geant4/G4VModularPhysicsList.hh \
- /home/somesh/geant4-install/include/Geant4/G4VPhysicsConstructor.hh \
- /home/somesh/geant4-install/include/Geant4/G4PhysicsListHelper.hh \
- /home/somesh/geant4-install/include/Geant4/G4PhysicsListOrderingParameter.hh \
- /home/somesh/geant4-install/include/Geant4/G4ThreadLocalSingleton.hh \
- /home/somesh/geant4-install/include/Geant4/G4Cache.hh \
- /home/somesh/geant4-install/include/Geant4/G4CacheDetails.hh \
- /home/somesh/geant4-install/include/Geant4/G4VUPLSplitter.hh \
- /home/somesh/geant4-install/include/Geant4/G4VUserPhysicsList.hh \
- /home/somesh/geant4-install/include/Geant4/G4ProductionCutsTable.hh \
- /home/somesh/geant4-install/include/Geant4/G4MaterialCutsCouple.hh \
- /home/somesh/geant4-install/include/Geant4/G4ProductionCuts.hh \
- /home/somesh/geant4-install/include/Geant4/G4MCCIndexConversionTable.hh \
  /home/somesh/geant4-install/include/Geant4/G4EmStandardPhysics.hh \
  /home/somesh/geant4-install/include/Geant4/G4OpticalPhysics.hh \
  /home/somesh/geant4-install/include/Geant4/G4OpticalParameters.hh \
+ /home/somesh/geant4-install/include/Geant4/G4RadioactiveDecayPhysics.hh \
  /home/somesh/geant4-install/include/Geant4/G4DecayPhysics.hh \
  /home/somesh/geant4-install/include/Geant4/G4Decay.hh \
  /home/somesh/geant4-install/include/Geant4/G4VRestDiscreteProcess.hh \
  /home/somesh/geant4-install/include/Geant4/G4ParticleChangeForDecay.hh \
  /home/somesh/geant4-install/include/Geant4/G4DecayProcessType.hh \
- /home/somesh/geant4-install/include/Geant4/G4RadioactiveDecayPhysics.hh \
  /home/somesh/geant4_projects/sim/action.hh \
  /home/somesh/geant4-install/include/Geant4/G4VUserActionInitialization.hh \
  /home/somesh/geant4_projects/sim/generator.hh \
@@ -881,7 +881,8 @@ CMakeFiles/sim.dir/sim.cc.o: /home/somesh/geant4_projects/sim/sim.cc \
  /home/somesh/geant4-install/include/Geant4/G4ParticleTable.hh \
  /home/somesh/geant4-install/include/Geant4/G4IonTable.hh \
  /home/somesh/geant4-install/include/Geant4/G4Ions.hh \
- /home/somesh/geant4-install/include/Geant4/G4Geantino.hh \
+ /home/somesh/geant4-install/include/Geant4/G4ChargedGeantino.hh \
+ /home/somesh/geant4-install/include/Geant4/Randomize.hh \
  /home/somesh/geant4_projects/sim/run.hh \
  /home/somesh/geant4-install/include/Geant4/G4UserRunAction.hh \
  /home/somesh/geant4-install/include/Geant4/G4Run.hh \
@@ -890,4 +891,6 @@ CMakeFiles/sim.dir/sim.cc.o: /home/somesh/geant4_projects/sim/sim.cc \
  /home/somesh/geant4-install/include/Geant4/G4Event.hh \
  /home/somesh/geant4_projects/sim/stepping.hh \
  /home/somesh/geant4-install/include/Geant4/G4UserSteppingAction.hh \
- /home/somesh/geant4-install/include/Geant4/G4Step.hh
+ /home/somesh/geant4-install/include/Geant4/G4Step.hh \
+ /home/somesh/geant4-install/include/Geant4/G4Gamma.hh \
+ /home/somesh/geant4-install/include/Geant4/G4Electron.hh
