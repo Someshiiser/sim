@@ -4,8 +4,10 @@ MySteppingAction::MySteppingAction(MyEventAction* eventAction)
 {
     fEventAction = eventAction;
 }
+
 MySteppingAction::~MySteppingAction()
 {}
+
 void MySteppingAction::UserSteppingAction(const G4Step* step)
 {
     G4LogicalVolume* volume = step->GetPreStepPoint()->GetTouchableHandle()->GetVolume()->GetLogicalVolume();

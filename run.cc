@@ -60,8 +60,3 @@ void MyRunAction::EndOfRunAction(const G4Run*)
     man ->CloseFile();
 }
 
-
-// If we need the output file to be created in the begining of the run then put it in the constructor.
-// If we need the output file to be created at the end of the run then put it in the destructor.
-// If we need the output file to be created at the end of the event then put it in the end of the event action.
-// if we want output being new for each run then put it the begining of the action.

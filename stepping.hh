@@ -18,6 +18,7 @@ class MySteppingAction : public G4UserSteppingAction
     private:
         MyEventAction* fEventAction;
 };
+
 // we have to create the stepping action and then we have to create the event action.
 
 #endif

@@ -1,4 +1,4 @@
-//it will tell teh detector the interacting physics.
+//it will tell the detector the interacting physics.
 
 #include "physics.hh"
 
@@ -14,5 +14,6 @@ MyPhysicsList::MyPhysicsList()
     
     // Register other physics processes here if needed
 }
+
 MyPhysicsList::~MyPhysicsList()
 {}

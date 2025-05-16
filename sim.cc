@@ -1,7 +1,6 @@
 // source ~/geant4-mt-install/bin/geant4.sh   **for geant4-mt**, that is multi-threaded version.
 // source ~/geant4-install/bin/geant4.sh   **for geant4**, that is single-threaded version.
 
-
 #include <iostream>
 
 #include "G4RunManager.hh"

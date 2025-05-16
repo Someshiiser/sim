@@ -12,6 +12,7 @@ void MyActionInitialization::BuildForMaster() const
     MyRunAction *runAction = new MyRunAction();
     SetUserAction(runAction);
 }
+
 void MyActionInitialization::Build() const
 {
     MyPrimaryGenerator *generator = new MyPrimaryGenerator();
