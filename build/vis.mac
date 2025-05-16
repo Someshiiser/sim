@@ -10,5 +10,5 @@
 /vis/scene/add/eventID
 /vis/scene/endOfEventAction accumulate
 /gun/particle proton
-/vis/ogl/set/displayListLimit 500000
+/vis/ogl/set/displayListLimit 900000
 
