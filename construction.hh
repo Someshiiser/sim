@@ -13,6 +13,8 @@
 #include "G4PVParameterised.hh"
 #include "G4VisAttributes.hh"
 #include "G4GenericMessenger.hh"
+#include "G4OpticalSurface.hh"
+#include "G4LogicalSkinSurface.hh"
 
 #include "detector.hh"
 
@@ -29,11 +31,11 @@ public:
 private:
 
 
-	G4Box *solidWorld, *solidRadiator, *solidDetector;
-	// add a cylinder for the scinntillator
-	G4Tubs *solidScintillator;
+	G4Box *solidWorld, *solidRadiator, *solidDetector, *solidScintillator;
+	//add a cylinder for the scinntillator
+	//G4Tubs *solidScintillator; // this was used for the circular ones, but now we need rectangular.
 	//G4LogicalVolume *logicWorld, *logicRadiator,*logicDetector, *logicScintillator;
-	G4LogicalVolume *logicWorld, *logicRadiator, *logicScintillator;
+	G4LogicalVolume *logicWorld, *logicRadiator, *logicDetector,  *logicScintillator;
 	G4VPhysicalVolume *physWorld, *physRadiator, *physDetector, *physScintillator;
 
 	G4Material *SiO2, *H2O, *Aerogel, *worldMat, *NaI;
@@ -49,7 +51,7 @@ private:
 
 	G4GenericMessenger *fMessenger;
 
-	G4LogicalVolume *logicDetector;
+	//G4LogicalVolume *logicDetector;
 	G4LogicalVolume *fScoringVolume; // logical volume for scoring
 
 	G4int nCols, nRows; // number of columns and rows of the photosensors
@@ -57,6 +59,11 @@ private:
 	G4double xWorld, yWorld, zWorld; // dimensions of the world volume
 
 	G4bool isCherenkov, isScintillator; // flags to check if the user wants to use cherenkov or scintillator
+
+	// to trap the photons in the scintillator, like morror or bax something, for this we have
+	G4OpticalSurface *mirrorSurface;
+
+
 
 };
 

@@ -57,6 +57,8 @@ void MyDetectorConstruction::DefineMaterials()
     G4double energy[2] = {1.239841939*eV/0.2, 1.239841939*eV/0.9}; // blue and red light nanometer.
     G4double rindexAerogel[2] = {1.1, 1.1};
     G4double rindexWorld[2] = {1.0, 1.0};
+    G4double rindexNaI[2] = {1.78, 1.78}; // for the soduim iodide scintillator.
+    G4double reflectivity[2] = {1.0, 1.0}; // as we need all photons to reflect back.
 
     G4MaterialPropertiesTable *mptAerogel= new G4MaterialPropertiesTable();
     mptAerogel -> AddProperty("RINDEX", energy, rindexAerogel, 2); //RINDEX is important, momentum, refractive index, two copies
@@ -73,6 +75,32 @@ void MyDetectorConstruction::DefineMaterials()
     NaI -> AddElement(Na, 1);
     NaI -> AddElement(I, 1);
 
+    G4double fraction[2] = {1.0, 1.0}; // all wavelenths with the same intensity.
+
+    G4MaterialPropertiesTable *mptNaI= new G4MaterialPropertiesTable();
+    mptNaI -> AddProperty("RINDEX", energy, rindexNaI, 2); //RINDEX is important, momentum, refractive index, two copies
+    mptNaI -> AddProperty("FASTCOMPONENT", energy, fraction, 2); // fast component is the scintillation light, which is emitted when the scintillator is excited by a charged particle.
+    mptNaI -> AddConstProperty("SCINTILLATIONYIELD", 38./keV); // scintillation yield is the number of photons emitted per MeV of energy deposited in the scintillator.
+    mptNaI -> AddConstProperty("FASTTIMECONSTANT", 250*ns); // fast time constant is the time it takes for the scintillation light to reach its maximum intensity.
+    mptNaI -> AddConstProperty("YIELDRATIO", 1.0); // yield ratio is the ratio of the number of photons emitted in the fast component to the number of photons emitted in the slow component.
+    mptNaI -> AddConstProperty("RESOLUTIONSCALE", 1.0); // resolution scale is the ratio of the energy deposited in the scintillator to the energy deposited in the photodetector.
+
+    NaI -> SetMaterialPropertiesTable(mptNaI);
+
+    // for the mirror surface,..
+    mirrorSurface = new G4OpticalSurface("mirrorSurface");
+    
+    mirrorSurface -> SetType(dielectric_metal); // this is the type of the surface.
+    mirrorSurface -> SetFinish(ground); // this is the finish of the surface.
+    mirrorSurface -> SetModel(unified); // this is the model of the surface.
+
+    // for this we create another property table, as wee need to create a reflective coating..
+    G4MaterialPropertiesTable *mptMirror = new G4MaterialPropertiesTable();
+
+    mptMirror -> AddProperty("REFLECTIVITY", energy, reflectivity, 2); // reflectivity is the ratio of the number of photons reflected by the surface to the number of photons incident on the surface.
+
+    mirrorSurface -> SetMaterialPropertiesTable(mptMirror); // we need to apply this to our scintillator, we go to our logicScintillator.
+
 }
  
 void MyDetectorConstruction::ConstructCherenkov() 
@@ -86,7 +114,7 @@ void MyDetectorConstruction::ConstructCherenkov()
     //adding the photosensors, that is detectors.
     solidDetector = new G4Box("solidDetector", xWorld/nRows, yWorld/nCols, 0.001*m);
     //to create logical volume for the detector, we have to considere the fact the sensitive volume that we will defint later will have to refer to this volume, so we have to define it in class definition directly.
-    logicDetector = new G4LogicalVolume(solidDetector, worldMat, " logicDetector");
+    logicDetector = new G4LogicalVolume(solidDetector, worldMat, "logicDetector");
     
     //To hide the detectors, they are invisible. Thats it.
     G4VisAttributes* invisible = new G4VisAttributes();
@@ -106,12 +134,39 @@ void MyDetectorConstruction::ConstructCherenkov()
 
 void MyDetectorConstruction::ConstructScintillator() 
 {
-    solidScintillator = new G4Tubs("solidScintillator", 10*cm, 20*cm, 30*cm, 0*deg, 360*deg);
+    //solidScintillator = new G4Tubs("solidScintillator", 10*cm, 20*cm, 30*cm, 0*deg, 360*deg);
+    solidScintillator = new G4Box("solidScintillator", 5*cm, 5*cm, 6*cm); // spatial resolution depends upon the size of the scintillaors.
+    logicScintillator = new G4LogicalVolume(solidScintillator, NaI, "logicScintillator");
     
-    logicScintillator = new G4LogicalVolume(solidScintillator, NaI, "logicalScintillator");
+    G4LogicalSkinSurface *skinSurface = new G4LogicalSkinSurface("skin", logicWorld, mirrorSurface); // one can also use the logicScintillator instead the logicWorld.
+    // we want to attach photodetector on top of scintillator, so we do as..
+    solidDetector = new G4Box("solidDetector", 1*cm, 5*cm, 6*cm);
+    logicDetector = new G4LogicalVolume(solidDetector, worldMat, "logicDetector");
+    
     fScoringVolume = logicScintillator; // we have to define the scoring volume, which is the volume in which we will put all the other volumes.
     
-    physScintillator = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicScintillator, "physScintialltor", logicWorld, false, 0, true);
+    // for the array of the scintillators we cerate two for loops and fill full world volume.
+    for (G4int i=0; i<6; i++)
+    {   
+        for (G4int j=0; j<16 ;j++)
+        {
+
+            // to bring in the right transformation, we create rotation in combination with the translation.
+            G4Rotate3D rotZ(j*22.5*deg, G4ThreeVector(0., 0., 1. ));
+            G4Translate3D transXScint(G4ThreeVector(5./tan(22.5/2*deg)*cm + 5.*cm, 0*cm, -40*cm + i*15*cm));
+
+            G4Translate3D transXDet(G4ThreeVector(5./tan(22.5/2*deg)*cm + 6.*cm +5*cm, 0*cm, -40*cm + i*15*cm));
+
+            G4Transform3D transformScint = (rotZ) * (transXScint); // this is the transformation, product of rotationa nd tanslation. first traanslation then rotation.
+            G4Transform3D transformDet = (rotZ) * (transXDet);
+            
+            //physScintillator = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicScintillator, "physScintialltor", logicWorld, false, 0, true); // it creates one scintillator.
+            physScintillator = new G4PVPlacement(transformScint, logicScintillator, "physScintialltor", logicWorld, false, 0, true);
+            physDetector = new G4PVPlacement(transformDet, logicDetector, "physDetector", logicWorld, false, 0, true);
+        
+        }
+    } // this creates ring of 16 scintillators and then 16*6=96 scintillators in total.
+    
 }
 
 G4VPhysicalVolume *MyDetectorConstruction::Construct() 
@@ -201,8 +256,9 @@ void MyDetectorConstruction::ConstructSDandField()
     MySensitiveDetector *sensDet = new MySensitiveDetector("Sensitive Detector");
     //logicDetector -> SetSensitiveDetector(sensDet);
 
-    if(isCherenkov)
-        logicRadiator -> SetSensitiveDetector(sensDet);
+    //if(isCherenkov)
+    if(logicDetector != NULL)
+        logicDetector -> SetSensitiveDetector(sensDet);
 
     
 }

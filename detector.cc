@@ -57,7 +57,9 @@ G4bool MySensitiveDetector::ProcessHits(G4Step* aStep, G4TouchableHistory* ROhis
     // below is done in order to hide the output in the terminal. And 
     
     #ifndef G4MULTITHREADED
-        G4cout << "Detector Position :" <<posDetector<<G4endl;
+        // commenting it out to make it faster.
+        //G4cout << "Detector Position :" <<posDetector<<G4endl;
+        //G4cout << "Photonwavelength:" <<wlen<<G4endl;
     #endif
     //Now we have the information we needed. To put it into the rootfile we proceed as.
     

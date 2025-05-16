@@ -586,6 +586,14 @@ CMakeFiles/sim.dir/sim.cc.o: /home/somesh/geant4_projects/sim/sim.cc \
  /home/somesh/geant4-install/include/Geant4/G4GenericMessenger.hh \
  /home/somesh/geant4-install/include/Geant4/G4AnyType.hh \
  /home/somesh/geant4-install/include/Geant4/G4AnyMethod.hh \
+ /home/somesh/geant4-install/include/Geant4/G4OpticalSurface.hh \
+ /home/somesh/geant4-install/include/Geant4/G4Physics2DVector.hh \
+ /home/somesh/geant4-install/include/Geant4/G4Physics2DVector.icc \
+ /home/somesh/geant4-install/include/Geant4/G4SurfaceProperty.hh \
+ /home/somesh/geant4-install/include/Geant4/G4LogicalSkinSurface.hh \
+ /home/somesh/geant4-install/include/Geant4/G4LogicalSurface.hh \
+ /home/somesh/geant4-install/include/Geant4/G4LogicalSurface.icc \
+ /home/somesh/geant4-install/include/Geant4/G4LogicalSkinSurface.icc \
  /home/somesh/geant4_projects/sim/detector.hh \
  /home/somesh/geant4-install/include/Geant4/G4VSensitiveDetector.hh \
  /home/somesh/geant4-install/include/Geant4/G4VReadOutGeometry.hh \
