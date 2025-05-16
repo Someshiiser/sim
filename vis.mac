@@ -4,11 +4,11 @@
 /vis/drawVolume
 /vis/viewer/set/autoRefresh true
 /vis/scene/add/trajectories smooth
+/vis/viewer/set/style wireframe
 /vis/scene/add/scale 10 cm
 /vis/scene/add/axes
 /vis/scene/add/eventID
 /vis/scene/endOfEventAction accumulate
 /gun/particle proton
-/vis/ogl/set/displayListLimit 5000000
-
+/vis/ogl/set/displayListLimit 500000
 

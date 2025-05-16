@@ -9,12 +9,13 @@
 
 class MyActionInitialization : public G4VUserActionInitialization
 {
-public:
+    public:
     MyActionInitialization();
     ~MyActionInitialization();
-    
+
+    virtual void Build() const;  //runs our particle gun and computes the stepping and so on.
     virtual void BuildForMaster() const;
-    virtual void Build() const;
+
 };
 
 #endif

@@ -1,1 +1,1 @@
-/control/loop scandet.mac sensors 10 100 10
+/control/loop scandet.mac cols 10 100 10

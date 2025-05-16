@@ -1,8 +1,9 @@
 #include "event.hh"
 
-MyEventAction::MyEventAction(MyRunAction*)
+
+MyEventAction::MyEventAction(MyRunAction* )
 {
-    fEdep = 0.;
+    fEdep = 0;
 }
 
 MyEventAction::~MyEventAction()
@@ -10,12 +11,14 @@ MyEventAction::~MyEventAction()
 
 void MyEventAction::BeginOfEventAction(const G4Event*)
 {
-    fEdep = 0.;
+    fEdep = 0;
 }
 
 void MyEventAction::EndOfEventAction(const G4Event*)
 {
-    G4cout << "Energy deposition: " << fEdep << G4endl;
+    #ifndef MULTITHREADED
+        G4cout << "Energy deposition: " << fEdep << G4endl;
+    #endif
 
     G4AnalysisManager *man = G4AnalysisManager::Instance();
 
