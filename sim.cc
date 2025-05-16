@@ -1,6 +1,11 @@
+// source ~/geant4-mt-install/bin/geant4.sh   **for geant4-mt**, that is multi-threaded version.
+// source ~/geant4-install/bin/geant4.sh   **for geant4**, that is single-threaded version.
+
+
 #include <iostream>
 
 #include "G4RunManager.hh"
+#include "G4MTRunManager.hh"
 #include "G4UImanager.hh"
 #include "G4VisManager.hh"
 #include "G4VisExecutive.hh"
@@ -12,15 +17,26 @@
 
 int main(int argc, char** argv)
 {
-	G4RunManager *runManager = new G4RunManager();
+	G4UIExecutive *ui = 0;
+
+	#ifdef G4MULTITHREADED
+	// If you want to use multi-threading, uncomment the following line
+		G4MTRunManager *runManager = new G4MTRunManager();
+	#else
+	// If you want to use single-threading, uncomment the following line
+		G4RunManager *runManager = new G4RunManager();
+	#endif
+
 	runManager->SetUserInitialization(new MyDetectorConstruction()); // intialise construction
 	runManager->SetUserInitialization(new MyPhysicsList()); //intialise physics list
 	runManager->SetUserInitialization(new MyActionInitialization());
-	runManager->Initialize();
+	
+	// below thing should be directly put in macro file as it is not needed in the main file.
+	//runManager->Initialize();
 
 	// so what we have done now is the following, first we dont want lot of memory to go in graphics, so we have to set the graphics to be in a different thread. So we have to create a UI executive.
 	//It will only be created if we have no arguments. If we have arguments then it will not be created. By arguments we mean to say number of command line arguments, one is sim.  
-	G4UIExecutive *ui = 0;
+	
 	if(argc == 1){
 		ui = new G4UIExecutive (argc, argv);
 	}

@@ -8,12 +8,18 @@ include(${Geant4_USE_FILE}) # tells cmake to include files for the geant4 in thi
 file(GLOB sources ${PROJECT_SOURCE_DIR}/*.cc) # it create a global variable "sources" and then {} is the folder where our script is positioned. /*.cc tell the cmake to take all source files from that folder and compile it later with gcc or c++.
 file(GLOB headers ${PROJECT_SOURCE_DIR}/*.hh)
 
+add_executable(sim sim.cc ${sources} ${headers})
+target_link_libraries(sim ${Geant4_LIBRARIES})
+
+
 file(GLOB MACRO_FILES
     "*.mac"
 )
 file(COPY ${MACRO_FILES} DESTINATION ${PROJECT_BINARY_DIR})
 
-add_executable(sim sim.cc ${sources} ${headers})
-target_link_libraries(sim ${Geant4_LIBRARIES})
+file(GLOB DATA_FILES
+    "*.dat"
+)
+file(COPY ${DATA_FILES} DESTINATION ${PROJECT_BINARY_DIR})
 
 add_custom_target(Simulation DEPENDS sim)

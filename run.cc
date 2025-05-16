@@ -4,12 +4,22 @@ MyRunAction::MyRunAction()
 {
     G4AnalysisManager *man = G4AnalysisManager::Instance();
     
+    //this is the monte carlo data not the real one
+    man ->CreateNtuple("Photons", "Photons");
+    man ->CreateNtupleIColumn("fEvent");
+    man ->CreateNtupleDColumn("fX");
+    man ->CreateNtupleDColumn("fY");
+    man ->CreateNtupleDColumn("fZ");
+    man ->CreateNtupleDColumn("fWlen"); //wavelength
+    man ->FinishNtuple(0);
+   
+    // this is the real data not the monte carlo one.
     man ->CreateNtuple("Hits", "Hits");
     man ->CreateNtupleIColumn("fEvent");
     man ->CreateNtupleDColumn("fX");
     man ->CreateNtupleDColumn("fY");
     man ->CreateNtupleDColumn("fZ");
-    man ->FinishNtuple(0);
+    man ->FinishNtuple(1);
 }
 
 MyRunAction::~MyRunAction()
