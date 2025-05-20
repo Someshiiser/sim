@@ -5,6 +5,11 @@
 #include "G4ParticleGun.hh"
 #include "G4SystemOfUnits.hh"  // for the units like GeV
 #include "G4ParticleTable.hh"  // 
+#include "G4ChargedGeantino.hh" // for the geantino
+
+//for radioactive decay
+#include "G4IonTable.hh"      // for the ion table
+#include "G4Geantino.hh"      // for the geantino
 
 class MyPrimaryGenerator : public G4VUserPrimaryGeneratorAction
 {

@@ -3,6 +3,7 @@
 
 #include "G4UserRunAction.hh"
 #include "G4Run.hh"
+#include "G4Run.hh"
 #include "g4root.hh"
 
 class MyRunAction : public G4UserRunAction

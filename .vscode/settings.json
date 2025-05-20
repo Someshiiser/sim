@@ -3,5 +3,8 @@
     "files.associations": {
         "new": "cpp",
         "*.icc": "cpp"
-    }
+    },
+    "geant4-macro-extension.additionalCommands": [
+        "/gun/momentumAmp"
+    ]
 }

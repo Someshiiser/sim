@@ -251,65 +251,11 @@ CMakeFiles/sim.dir/action.cc.o: \
  /home/somesh/geant4-install/include/Geant4/G4ParticleTable.hh \
  /home/somesh/geant4-install/include/Geant4/G4ParticleTableIterator.hh \
  /home/somesh/geant4-install/include/Geant4/G4ParticleTable.icc \
+ /home/somesh/geant4-install/include/Geant4/G4ChargedGeantino.hh \
  /home/somesh/geant4-install/include/Geant4/G4IonTable.hh \
  /home/somesh/geant4-install/include/Geant4/G4ParticleTable.hh \
  /home/somesh/geant4-install/include/Geant4/G4Ions.hh \
- /home/somesh/geant4-install/include/Geant4/G4ChargedGeantino.hh \
- /home/somesh/geant4-install/include/Geant4/Randomize.hh \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/Randomize.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/DualRand.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandomEngine.h \
- /usr/include/c++/11/fstream \
- /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
- /usr/include/c++/11/bits/fstream.tcc \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandomEngine.icc \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/JamesRandom.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/MixMaxRng.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/MTwistEngine.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RanecuEngine.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RanluxEngine.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/Ranlux64Engine.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RanshiEngine.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandBinomial.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/Random.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/Random.icc \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Utility/memory.h \
- /usr/include/c++/11/memory \
- /usr/include/c++/11/bits/stl_raw_storage_iter.h \
- /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
- /usr/include/c++/11/bits/shared_ptr_atomic.h \
- /usr/include/c++/11/backward/auto_ptr.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandBinomial.icc \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandBreitWigner.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandFlat.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Utility/thread_local.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandFlat.icc \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandBreitWigner.icc \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandChiSquare.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandChiSquare.icc \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandExponential.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandExponential.icc \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandExpZiggurat.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandBit.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandBit.icc \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandGamma.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandGamma.icc \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandGauss.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandGauss.icc \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandGaussQ.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandGaussQ.icc \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandGaussZiggurat.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandGeneral.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandGeneral.icc \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandLandau.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandLandau.icc \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandPoissonQ.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandPoisson.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandPoisson.icc \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandPoissonQ.icc \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandStudentT.h \
- /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandStudentT.icc \
+ /home/somesh/geant4-install/include/Geant4/G4Geantino.hh \
  /home/somesh/geant4_projects/sim/run.hh \
  /home/somesh/geant4-install/include/Geant4/G4UserRunAction.hh \
  /home/somesh/geant4-install/include/Geant4/G4Run.hh \
@@ -318,6 +264,11 @@ CMakeFiles/sim.dir/action.cc.o: \
  /usr/include/c++/11/functional \
  /home/somesh/geant4-install/include/Geant4/PTL/Globals.hh \
  /home/somesh/geant4-install/include/Geant4/PTL/Types.hh \
+ /usr/include/c++/11/memory \
+ /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
+ /usr/include/c++/11/bits/shared_ptr_atomic.h \
+ /usr/include/c++/11/backward/auto_ptr.h \
  /home/somesh/geant4-install/include/Geant4/PTL/Utility.hh \
  /usr/include/c++/11/set /usr/include/c++/11/bits/stl_set.h \
  /usr/include/c++/11/bits/stl_multiset.h \
@@ -424,6 +375,10 @@ CMakeFiles/sim.dir/action.cc.o: \
  /home/somesh/geant4-install/include/Geant4/G4VAnalysisManager.hh \
  /home/somesh/geant4-install/include/Geant4/G4AnalysisManagerState.hh \
  /home/somesh/geant4-install/include/Geant4/G4AnalysisVerbose.hh \
+ /usr/include/c++/11/fstream \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
+ /usr/include/c++/11/bits/fstream.tcc \
  /home/somesh/geant4-install/include/Geant4/G4VAnalysisManager.icc \
  /home/somesh/geant4-install/include/Geant4/G4HnManager.hh \
  /home/somesh/geant4-install/include/Geant4/G4BaseAnalysisManager.hh \
@@ -655,12 +610,9 @@ CMakeFiles/sim.dir/action.cc.o: \
  /home/somesh/geant4-install/include/Geant4/G4PhysicsModelCatalog.hh \
  /home/somesh/geant4-install/include/Geant4/G4Track.icc \
  /home/somesh/geant4-install/include/Geant4/G4Step.hh \
- /home/somesh/geant4-install/include/Geant4/G4Gamma.hh \
- /home/somesh/geant4-install/include/Geant4/G4Electron.hh \
  /home/somesh/geant4_projects/sim/construction.hh \
  /home/somesh/geant4-install/include/Geant4/G4VUserDetectorConstruction.hh \
  /home/somesh/geant4-install/include/Geant4/G4VPhysicalVolume.hh \
- /home/somesh/geant4-install/include/Geant4/G4LogicalVolume.hh \
  /home/somesh/geant4-install/include/Geant4/G4Box.hh \
  /home/somesh/geant4-install/include/Geant4/G4GeomTypes.hh \
  /home/somesh/geant4-install/include/Geant4/G4GeomConfig.hh \
@@ -691,6 +643,16 @@ CMakeFiles/sim.dir/action.cc.o: \
  /home/somesh/geant4-install/include/Geant4/G4LPhysicsFreeVector.hh \
  /home/somesh/geant4-install/include/Geant4/G4PhysicsFreeVector.hh \
  /home/somesh/geant4-install/include/Geant4/G4Pow.hh \
+ /home/somesh/geant4-install/include/Geant4/G4LogicalVolume.hh \
+ /home/somesh/geant4-install/include/Geant4/G4VPVParameterisation.hh \
+ /home/somesh/geant4-install/include/Geant4/G4VVolumeMaterialScanner.hh \
+ /home/somesh/geant4-install/include/Geant4/G4PVParameterised.hh \
+ /home/somesh/geant4-install/include/Geant4/G4PVReplica.hh \
+ /home/somesh/geant4-install/include/Geant4/G4VisAttributes.hh \
+ /home/somesh/geant4-install/include/Geant4/graphics_reps_defs.hh \
+ /home/somesh/geant4-install/include/Geant4/G4Colour.hh \
+ /home/somesh/geant4-install/include/Geant4/G4Color.hh \
+ /home/somesh/geant4-install/include/Geant4/G4VisAttributes.icc \
  /home/somesh/geant4-install/include/Geant4/G4GenericMessenger.hh \
  /home/somesh/geant4-install/include/Geant4/G4UImessenger.hh \
  /home/somesh/geant4-install/include/Geant4/G4UIdirectory.hh \
@@ -704,11 +666,9 @@ CMakeFiles/sim.dir/action.cc.o: \
  /home/somesh/geant4-install/include/Geant4/G4Physics2DVector.hh \
  /home/somesh/geant4-install/include/Geant4/G4Physics2DVector.icc \
  /home/somesh/geant4-install/include/Geant4/G4SurfaceProperty.hh \
- /home/somesh/geant4-install/include/Geant4/G4LogicalBorderSurface.hh \
+ /home/somesh/geant4-install/include/Geant4/G4LogicalSkinSurface.hh \
  /home/somesh/geant4-install/include/Geant4/G4LogicalSurface.hh \
  /home/somesh/geant4-install/include/Geant4/G4LogicalSurface.icc \
- /home/somesh/geant4-install/include/Geant4/G4LogicalBorderSurface.icc \
- /home/somesh/geant4-install/include/Geant4/G4LogicalSkinSurface.hh \
  /home/somesh/geant4-install/include/Geant4/G4LogicalSkinSurface.icc \
  /home/somesh/geant4_projects/sim/detector.hh \
  /home/somesh/geant4-install/include/Geant4/G4VSensitiveDetector.hh \
@@ -742,6 +702,51 @@ CMakeFiles/sim.dir/action.cc.o: \
  /home/somesh/geant4-install/include/Geant4/G4TrackingManager.hh \
  /home/somesh/geant4-install/include/Geant4/G4SteppingManager.hh \
  /home/somesh/geant4-install/include/Geant4/Randomize.hh \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/Randomize.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/DualRand.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandomEngine.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandomEngine.icc \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/JamesRandom.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/MixMaxRng.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/MTwistEngine.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RanecuEngine.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RanluxEngine.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/Ranlux64Engine.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RanshiEngine.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandBinomial.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/Random.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/Random.icc \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Utility/memory.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandBinomial.icc \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandBreitWigner.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandFlat.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Utility/thread_local.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandFlat.icc \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandBreitWigner.icc \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandChiSquare.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandChiSquare.icc \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandExponential.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandExponential.icc \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandExpZiggurat.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandBit.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandBit.icc \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandGamma.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandGamma.icc \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandGauss.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandGauss.icc \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandGaussQ.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandGaussQ.icc \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandGaussZiggurat.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandGeneral.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandGeneral.icc \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandLandau.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandLandau.icc \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandPoissonQ.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandPoisson.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandPoisson.icc \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandPoissonQ.icc \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandStudentT.h \
+ /home/somesh/geant4-install/include/Geant4/CLHEP/Random/RandStudentT.icc \
  /home/somesh/geant4-install/include/Geant4/G4Navigator.hh \
  /home/somesh/geant4-install/include/Geant4/G4GRSVolume.hh \
  /home/somesh/geant4-install/include/Geant4/G4GRSVolume.icc \
@@ -765,7 +770,6 @@ CMakeFiles/sim.dir/action.cc.o: \
  /home/somesh/geant4-install/include/Geant4/G4VoxelNavigation.icc \
  /home/somesh/geant4-install/include/Geant4/G4ParameterisedNavigation.hh \
  /home/somesh/geant4-install/include/Geant4/G4VPVParameterisation.hh \
- /home/somesh/geant4-install/include/Geant4/G4VVolumeMaterialScanner.hh \
  /home/somesh/geant4-install/include/Geant4/G4ParameterisedNavigation.icc \
  /home/somesh/geant4-install/include/Geant4/G4ReplicaNavigation.hh \
  /home/somesh/geant4-install/include/Geant4/G4ReplicaNavigation.icc \
