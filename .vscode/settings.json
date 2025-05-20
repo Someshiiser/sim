@@ -5,6 +5,10 @@
         "*.icc": "cpp"
     },
     "geant4-macro-extension.additionalCommands": [
-        "/gun/momentumAmp"
-    ]
+        "/gun/momentumAmp",
+        "/gun/particle",
+        "/gun/position",
+        "/detector/nCols"
+    ],
+    "cmake.sourceDirectory": "/home/somesh/geant4_projects/sim/base_files"
 }
